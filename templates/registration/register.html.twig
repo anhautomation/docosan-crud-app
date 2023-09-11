@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+  
+{% block title %}Login{% endblock %}
+  
+{% block body %}
+<div class="container">
+<div class="col-md-6 mx-auto">
+    <div class="form-signin">
+        {{ form_start(registrationForm) }}
+        <h2 class="text-center mb-4">Register</h2>
+        
+        <div class="form-floating mb-3">
+            {{ form_widget(registrationForm.username, 
+                {'attr': {
+                    'class': 'form-control', 
+                    'placeholder': 'Username', 
+                    'required': 'required'
+                }}) 
+            }}
+            {{ form_label(registrationForm.username) }}
+        </div>
+
+        <div class="form-floating mb-3">
+            {{ form_widget(registrationForm.plainPassword, 
+                {'attr': {
+                    'class': 'form-control', 
+                    'placeholder': 'Password', 
+                    'type': 'password', 
+                    'required': 'required'
+                }}) 
+            }}
+            {{ form_label(registrationForm.plainPassword) }}
+        </div>
+
+        <div class="form-floating mb-3">
+            {{ form_widget(registrationForm.agreeTerms) }}
+            {{ form_label(registrationForm.agreeTerms) }}
+        </div>
+        
+        <button class="btn btn-primary btn-block mt-3" type="submit">Register</button>
+        {{ form_end(registrationForm) }}
+    </div>
+</div>
+</div>
+{% endblock %}
